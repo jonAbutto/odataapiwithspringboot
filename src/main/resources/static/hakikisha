@@ -1,0 +1,9 @@
+ final String plainCreds = "name:password";
+        final byte[] getPlainCredsBytes = plainCreds.getBytes();
+        final byte[] base64Creds = org.apache.tomcat.util.codec.binary.Base64.encodeBase64(getPlainCredsBytes);
+        final String encodedCreds = new String(base64Creds);
+
+        // add creds to auth headers
+        final HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Basic Sk9ITjpKb2huQDIwMTk=");
+        headers.add("content-type", "application/json");
